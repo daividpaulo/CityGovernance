@@ -6,7 +6,11 @@ namespace CityGovernance.Infra.Db
 {
     public class CityGovernanceContext : DbContext
     {
-        public CityGovernanceContext(DbContextOptions options) : base(options)
+
+        public DbSet<City> Citys { get; set; }
+        public DbSet<Region> Regions { get; set; }
+
+    public CityGovernanceContext(DbContextOptions options) : base(options)
         {
            
         }
