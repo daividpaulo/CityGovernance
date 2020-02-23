@@ -1,0 +1,217 @@
+﻿@model CityGovernance.Utils.PaginatedList<CityGovernance.Domain.Models.City>
+
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h6 class="display-4">Encontre uma cidade</h6>
+                <p class="lead">Gerenciamento de cidades</p>
+
+                <form asp-action="SearchCities"
+                      asp-route-sortOrder="@ViewData["sortOrder"]"
+                      asp-route-sortBy="@ViewData["sortBy"]"
+                      asp-route-pageNumber="@(Model.PageIndex + 1)"
+                      asp-route-currentFilter="@ViewData["currentFilter"]"
+                      method="get">
+                    <div class="input-group mb-3">
+                        <input type="text"
+                               class="form-control"
+                               name="currentFilter"
+                               value="@ViewData["currentFilter"]"
+                               placeholder="Pesquisar por"
+                               aria-label="Pesquisar por"
+                               aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <button class="btn btn-primary float-right">NOVA CIDADE</button>
+                    <br />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+@{
+    var nextOrder = ViewData["sortOrder"].ToString().Equals("asc") ? "desc" : "asc";
+}
+
+<div class="row mt-1">
+    <div class="col-sm-12 col-md-12 col-lg-12 table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Id"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            Id
+                        </a>
+
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Id"
+                           asp-route-sortOrder='@nextOrder'
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <>
+                        </a>
+
+
+                    </th>
+                    <th>
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Ibge"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">Ibge</a>
+
+
+
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Ibge"
+                           asp-route-sortOrder='@nextOrder'
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <>
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Name"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">Nome</a>
+
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Name"
+                           asp-route-sortOrder='@nextOrder'
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <>
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Longitude"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">Longitude</a>
+
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Longitude"
+                           asp-route-sortOrder='@nextOrder'
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <>
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Latitude"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">Latitude</a>
+
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Latitude"
+                           asp-route-sortOrder='@nextOrder'
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <>
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Uf"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">Uf</a>
+
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Uf"
+                           asp-route-sortOrder='@nextOrder'
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <>
+                        </a>
+                    </th>
+                    <th>
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Region.Name"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-currentFilter="@ViewData["currentFilter"]">Região</a>
+
+                        <a asp-action="SearchCities"
+                           asp-route-sortBy="Region.Name"
+                           asp-route-sortOrder='@nextOrder'
+                           asp-route-currentFilter="@ViewData["currentFilter"]">
+                            <>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Ibge)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Longitude)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Latitude)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Uf)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Region.Name)</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
+
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a asp-action="SearchCities"
+                       asp-route-sortOrder="@ViewData["sortOrder"]"
+                       asp-route-sortBy="@ViewData["sortBy"]"
+                       asp-route-pageNumber="@(Model.PageIndex - 1)"
+                       asp-route-currentFilter="@ViewData["currentFilter"]"
+                       class="page-link @prevDisabled">
+                        <<
+                    </a>
+                </li>
+                @for (var i = Model.PageIndex == 1 ? Model.PageIndex : Model.PageIndex - 1;
+                         i <= (Model.PageIndex + 5 > Model.TotalPages ? Model.TotalPages : Model.PageIndex + 5); i++)
+                {
+                    var activedItemClass = Model.PageIndex == @i ? "active" : "";
+
+                    <li class="page-item @activedItemClass">
+                        <a asp-action="SearchCities"
+                           asp-route-sortOrder="@ViewData["sortOrder"]"
+                           asp-route-sortBy="@ViewData["sortBy"]"
+                           asp-route-pageNumber="@i"
+                           asp-route-currentFilter="@ViewData["currentFilter"]"
+                           class="page-link">
+                            @i
+                        </a>
+                    </li>
+                }
+                <li class="page-item">
+                    <a asp-action="SearchCities"
+                       asp-route-sortOrder="@ViewData["sortOrder"]"
+                       asp-route-sortBy="@ViewData["sortBy"]"
+                       asp-route-pageNumber="@(Model.PageIndex + 1)"
+                       asp-route-currentFilter="@ViewData["currentFilter"]"
+                       class="page-link @nextDisabled">
+                        >>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+    </div>
+</div>

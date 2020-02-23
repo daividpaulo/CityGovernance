@@ -1,0 +1,11 @@
+C:\Testes\CityGovernance\CityGovernance.Services\bin\Debug\netcoreapp3.1\CityGovernance.Services.deps.json
+C:\Testes\CityGovernance\CityGovernance.Services\bin\Debug\netcoreapp3.1\CityGovernance.Services.dll
+C:\Testes\CityGovernance\CityGovernance.Services\bin\Debug\netcoreapp3.1\CityGovernance.Services.pdb
+C:\Testes\CityGovernance\CityGovernance.Services\bin\Debug\netcoreapp3.1\CityGovernance.Domain.dll
+C:\Testes\CityGovernance\CityGovernance.Services\bin\Debug\netcoreapp3.1\CityGovernance.Domain.pdb
+C:\Testes\CityGovernance\CityGovernance.Services\obj\Debug\netcoreapp3.1\CityGovernance.Services.csprojAssemblyReference.cache
+C:\Testes\CityGovernance\CityGovernance.Services\obj\Debug\netcoreapp3.1\CityGovernance.Services.AssemblyInfoInputs.cache
+C:\Testes\CityGovernance\CityGovernance.Services\obj\Debug\netcoreapp3.1\CityGovernance.Services.AssemblyInfo.cs
+C:\Testes\CityGovernance\CityGovernance.Services\obj\Debug\netcoreapp3.1\CityGovernance.Services.csproj.CopyComplete
+C:\Testes\CityGovernance\CityGovernance.Services\obj\Debug\netcoreapp3.1\CityGovernance.Services.dll
+C:\Testes\CityGovernance\CityGovernance.Services\obj\Debug\netcoreapp3.1\CityGovernance.Services.pdb

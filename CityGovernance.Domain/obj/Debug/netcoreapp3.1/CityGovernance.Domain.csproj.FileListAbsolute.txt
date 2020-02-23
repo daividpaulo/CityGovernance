@@ -1,8 +1,8 @@
 C:\Testes\CityGovernance\CityGovernance.Domain\bin\Debug\netcoreapp3.1\CityGovernance.Domain.deps.json
 C:\Testes\CityGovernance\CityGovernance.Domain\bin\Debug\netcoreapp3.1\CityGovernance.Domain.dll
 C:\Testes\CityGovernance\CityGovernance.Domain\bin\Debug\netcoreapp3.1\CityGovernance.Domain.pdb
+C:\Testes\CityGovernance\CityGovernance.Domain\obj\Debug\netcoreapp3.1\CityGovernance.Domain.csprojAssemblyReference.cache
 C:\Testes\CityGovernance\CityGovernance.Domain\obj\Debug\netcoreapp3.1\CityGovernance.Domain.AssemblyInfoInputs.cache
 C:\Testes\CityGovernance\CityGovernance.Domain\obj\Debug\netcoreapp3.1\CityGovernance.Domain.AssemblyInfo.cs
 C:\Testes\CityGovernance\CityGovernance.Domain\obj\Debug\netcoreapp3.1\CityGovernance.Domain.dll
 C:\Testes\CityGovernance\CityGovernance.Domain\obj\Debug\netcoreapp3.1\CityGovernance.Domain.pdb
-C:\Testes\CityGovernance\CityGovernance.Domain\obj\Debug\netcoreapp3.1\CityGovernance.Domain.csprojAssemblyReference.cache

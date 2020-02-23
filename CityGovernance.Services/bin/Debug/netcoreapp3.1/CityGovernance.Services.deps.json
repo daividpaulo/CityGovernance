@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CityGovernance.Services/1.0.0": {
+        "dependencies": {
+          "CityGovernance.Domain": "1.0.0"
+        },
+        "runtime": {
+          "CityGovernance.Services.dll": {}
+        }
+      },
+      "CityGovernance.Domain/1.0.0": {
+        "runtime": {
+          "CityGovernance.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CityGovernance.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CityGovernance.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
