@@ -1,0 +1,68 @@
+﻿@model CityGovernance.ViewModels.CityViewModel
+
+@{
+    ViewData["Title"] = "InsertCidade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h4>Nova Cidade</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="NewCity">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="form-group">
+                <label asp-for="Ibge" class="control-label"></label>
+                <input asp-for="Ibge" class="form-control" />
+                <span asp-validation-for="Ibge" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Longitude" class="control-label"></label>
+                <input asp-for="Longitude" class="form-control" />
+                <span asp-validation-for="Longitude" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Latitude" class="control-label"></label>
+                <input asp-for="Latitude" class="form-control" />
+                <span asp-validation-for="Latitude" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Uf" class="control-label"></label>
+                <input asp-for="Uf" class="form-control" />
+                <span asp-validation-for="Uf" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Region.Name" class="control-label"></label>
+                <input asp-for="Region.Name" class="form-control" />
+                <span asp-validation-for="Region.Name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="SearchCities">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

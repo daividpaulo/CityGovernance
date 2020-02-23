@@ -6,8 +6,11 @@ using AutoMapper;
 using CityGovernance.Domain.Interfaces;
 using CityGovernance.Domain.Models;
 using CityGovernance.infra.Configurations;
+using CityGovernance.infra.Db;
+using CityGovernance.infra.Interfaces;
 using CityGovernance.infra.Repositories;
 using CityGovernance.Infra.Db;
+using CityGovernance.Middlewares;
 using CityGovernance.Services.Services;
 using CityGovernance.ViewModels;
 using Microsoft.AspNetCore.Builder;
@@ -40,10 +43,10 @@ namespace CityGovernance
                      opt.UseNpgsql(Configuration.GetConnectionString(nameof(CityGovernanceContext)));
 
 
-                 })
-                .AddControllersWithViews();
+                 }).AddControllersWithViews();
             
-            
+
+
             DependencyInjectionConfiguratino(services);
             AutoMapperConfiguration(services);
 
@@ -68,6 +71,7 @@ namespace CityGovernance
             services.AddTransient<IDataService, DataService>();
             services.AddScoped<ICityService, CityService>();
             services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         }
 
@@ -90,7 +94,7 @@ namespace CityGovernance
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
-
+            app.UseUow();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

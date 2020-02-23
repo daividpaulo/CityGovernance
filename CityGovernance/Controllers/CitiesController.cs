@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CityGovernance.Domain.Exceptions;
 using CityGovernance.Domain.Interfaces;
 using CityGovernance.Domain.Models;
 using CityGovernance.Utils;
@@ -23,8 +24,6 @@ namespace CityGovernance.Controllers
         }
 
 
-       
-
         public async Task<IActionResult> SearchCities(
              string sortOrder,
              string sortBy,
@@ -46,5 +45,96 @@ namespace CityGovernance.Controllers
             return View(await PaginatedList<City>.CreateAsync(query.AsNoTracking(), pageNumber ?? 1, pageSize ?? 5));
             
         }
+
+
+        public IActionResult NewCity()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult NewCity(CityViewModel cityViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var cityDb = _cityService.AddNew(_mapper.Map<City>(cityViewModel));
+                    return RedirectToAction(nameof(Details), routeValues: new { id = cityDb.Id });
+
+                }catch(Exception ex)
+                {
+                    ModelState.AddModelError("", "Inclusão não realizada! " +
+                        "Tente novamente, caso problema persista " +
+                        "entre em contato com o administrador do sistema.");
+                 }
+
+            }
+
+            return View(cityViewModel);
+        }
+        
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null) return NotFound();
+            
+            var city = _cityService.GetOne(id);
+
+            if (city == null) return NotFound();
+          
+            return View(_mapper.Map<CityViewModel>(city));
+        }
+
+
+
+
+        public IActionResult Edit(int? id)
+        {
+            
+            if (id == null) return NotFound();
+
+            var city = _cityService.GetOne(id);
+
+            if (city == null) return NotFound();
+
+            return View(_mapper.Map<CityViewModel>(city));
+            
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, CityViewModel cityViewModel)
+        {
+            if (id != cityViewModel.Id) return NotFound();
+
+            if (!ModelState.IsValid) return View(cityViewModel);
+
+            try
+            {
+                var cityModel = _mapper.Map<City>(cityViewModel);
+                cityViewModel = _mapper.Map<CityViewModel>(_cityService.UpdateCity(id, cityModel));
+
+                return RedirectToAction(nameof(Details), routeValues: new { id = cityViewModel.Id });
+
+            }
+            catch(ExistCityException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }          
+            catch(Exception ex)
+            {
+                ModelState.AddModelError("", "Inclusão não realizada! " +
+                    "Tente novamente, caso problema persista " +
+                    "entre em contato com o administrador do sistema.");
+            }
+
+            return View(cityViewModel);
+        }
+
+
     }
 }

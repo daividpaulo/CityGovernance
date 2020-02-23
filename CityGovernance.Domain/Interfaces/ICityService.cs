@@ -9,6 +9,8 @@ namespace CityGovernance.Domain.Interfaces
     public interface ICityService
     {
         IQueryable<City> GetAllCities(string search,string order,string sort);
-
+        City GetOne(int? id);
+        City AddNew(City city);
+        City UpdateCity(int id, City cityModel);
     }
 }

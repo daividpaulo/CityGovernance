@@ -9,6 +9,7 @@ using System.Text;
 
 namespace CityGovernance.infra.Repositories
 {
+
     public class CityRepository : ICityRepository
     {
         private readonly CityGovernanceContext citygovernanceContext;
@@ -16,6 +17,21 @@ namespace CityGovernance.infra.Repositories
         {
 
             this.citygovernanceContext = citygovernanceContext;
+        }
+
+        public City AddNew(City city)
+        {
+
+            citygovernanceContext.Add(city);
+
+            return city;
+        }
+
+        public Region AddNewRegion(Region regionDb)
+        {
+            citygovernanceContext.Set<Region>().Add(regionDb);
+
+            return regionDb;
         }
 
         public IQueryable<City> GetAllCities(string search, string order, string sortBy)
@@ -45,6 +61,38 @@ namespace CityGovernance.infra.Repositories
 
 
             return citiesAsQuerable;
+        }
+
+        public City GetOne(int? id)
+        {
+
+            return citygovernanceContext.Citys
+                               .Include(x => x.Region)
+                               .AsNoTracking()
+                               .FirstOrDefault(x => x.Id == id);
+
+        }
+
+        public Region GetRegionByName(string name)
+        {
+            return citygovernanceContext.Regions.Where(x => x.Name.ToLower().Trim().Equals(name.ToLower().Trim())).FirstOrDefault();
+        }
+
+        public bool IsValid(City cityModel)
+        {
+            return !citygovernanceContext.Citys.AsNoTracking().Any(x => x.Id != cityModel.Id &&
+                                                                    (x.Ibge == cityModel.Ibge ||
+
+                                                                        (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
+                                                                          x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
+                                                                      );
+        }
+
+        public City Update(City cityDb)
+        {
+            citygovernanceContext.Citys.Update(cityDb);
+
+            return cityDb;
         }
 
         private IQueryable<City> orderByAsc(IQueryable<City> query, string sortBy)

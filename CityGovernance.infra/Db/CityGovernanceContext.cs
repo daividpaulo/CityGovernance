@@ -10,7 +10,7 @@ namespace CityGovernance.Infra.Db
         public DbSet<City> Citys { get; set; }
         public DbSet<Region> Regions { get; set; }
 
-    public CityGovernanceContext(DbContextOptions options) : base(options)
+        public CityGovernanceContext(DbContextOptions options) : base(options)
         {
            
         }
@@ -28,8 +28,7 @@ namespace CityGovernance.Infra.Db
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseNpgsql().UseSnakeCaseNamingConvention();
-
+            
             base.OnConfiguring(optionsBuilder);
         }
 

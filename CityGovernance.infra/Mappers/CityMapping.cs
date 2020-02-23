@@ -20,7 +20,9 @@ namespace CityGovernance.infra.Mappers
                   .UseIdentityByDefaultColumn();
 
             builder.HasIndex(x => x.Ibge).IsUnique();
-            
+
+            builder.Property(x => x.Latitude).IsRequired();
+
             builder.HasOne(x => x.Region)
                 .WithMany()
                 .IsRequired();

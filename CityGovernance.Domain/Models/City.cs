@@ -22,6 +22,15 @@ namespace CityGovernance.Domain.Models
 
         public Region Region { get; set; }
 
-
+        public void Update(City cityModel)
+        {
+            Ibge = cityModel.Ibge;
+            Uf = cityModel.Uf;
+            Name = cityModel.Name;
+            Longitude = cityModel.Longitude;
+            Latitude = cityModel.Latitude;
+            Region = cityModel.Region;
+            
+        }
     }
 }
