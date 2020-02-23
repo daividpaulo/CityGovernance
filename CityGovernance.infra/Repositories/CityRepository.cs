@@ -80,7 +80,9 @@ namespace CityGovernance.infra.Repositories
 
         public bool IsValid(City cityModel)
         {
-            return !citygovernanceContext.Citys.AsNoTracking().Any(x => x.Id != cityModel.Id &&
+            return !citygovernanceContext.Citys.AsNoTracking().Any(x =>
+                                                                       (cityModel.Id > 0 && x.Id != cityModel.Id) &&
+                                                                    
                                                                     (x.Ibge == cityModel.Ibge ||
 
                                                                         (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
@@ -91,7 +93,7 @@ namespace CityGovernance.infra.Repositories
         public City Update(City cityDb)
         {
             citygovernanceContext.Citys.Update(cityDb);
-
+            
             return cityDb;
         }
 

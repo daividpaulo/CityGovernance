@@ -25,10 +25,16 @@ namespace CityGovernance.Services.Services
             return _citiesRepository.GetAllCities(search,order,sort);
         }
 
-        public City AddNew(City city)
+        public City AddNew(City cityModel)
         {
-        
-            return _citiesRepository.AddNew(city);
+
+            bool isValid = _citiesRepository.IsValid(cityModel);
+
+            if (!isValid) throw new ExistCityException();
+
+            cityModel.Region = GetOrInsertRegion(cityModel.Region.Name);
+
+            return _citiesRepository.AddNew(cityModel);
 
         }
 

@@ -22,6 +22,10 @@ namespace CityGovernance.infra.Mappers
             builder.HasIndex(x => x.Ibge).IsUnique();
 
             builder.Property(x => x.Latitude).IsRequired();
+            builder.Property(x => x.Longitude).IsRequired();
+            builder.Property(x => x.Ibge).IsRequired();
+            builder.Property(x => x.Name).IsRequired();
+            builder.Property(x => x.Uf).IsRequired();
 
             builder.HasOne(x => x.Region)
                 .WithMany()

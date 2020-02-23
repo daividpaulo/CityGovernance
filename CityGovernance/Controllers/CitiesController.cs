@@ -64,7 +64,12 @@ namespace CityGovernance.Controllers
                     var cityDb = _cityService.AddNew(_mapper.Map<City>(cityViewModel));
                     return RedirectToAction(nameof(Details), routeValues: new { id = cityDb.Id });
 
-                }catch(Exception ex)
+                }
+                catch (ExistCityException ex)
+                {
+                    ModelState.AddModelError("", ex.Message);
+                }
+                catch (Exception ex)
                 {
                     ModelState.AddModelError("", "Inclusão não realizada! " +
                         "Tente novamente, caso problema persista " +
