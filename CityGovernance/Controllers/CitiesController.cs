@@ -17,10 +17,12 @@ namespace CityGovernance.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ICityService _cityService;
-        public CitiesController(IMapper mapper, ICityService cityService)
+        private readonly IReportsCityService _reportService;
+        public CitiesController(IMapper mapper, ICityService cityService, IReportsCityService reportService)
         {
             _mapper = mapper;
             _cityService = cityService;
+            _reportService = reportService;
         }
 
 
@@ -62,7 +64,7 @@ namespace CityGovernance.Controllers
                 try
                 {
                     var cityDb = _cityService.AddNew(_mapper.Map<City>(cityViewModel));
-                    return RedirectToAction(nameof(Details), routeValues: new { id = cityDb.Id });
+                    return RedirectToAction(nameof(SearchCities));
 
                 }
                 catch (ExistCityException ex)
@@ -161,6 +163,19 @@ namespace CityGovernance.Controllers
             return View(cityViewModel);
         }
 
+
+
+        public IActionResult ReportCountCityUf()
+        {
+            var fileName = string.Format("Quantidade_Cidades_Por_Uf_{0}.xlsx", DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
+            return File(_reportService.CountsCitysForUF().ToArray(),"application/vnd.ms-excel",fileName); 
+        }
+
+        public IActionResult ReportCountCityRegion()
+        {
+            var fileName = string.Format("Quantidade_Cidades_Por_Regiao_{0}.xlsx", DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
+            return File(_reportService.CountsCitysForRegion().ToArray(), "application/vnd.ms-excel", fileName);
+        }
 
     }
 }

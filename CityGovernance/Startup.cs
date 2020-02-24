@@ -70,6 +70,7 @@ namespace CityGovernance
             services.AddScoped<ICityService, CityService>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IReportsCityService, ReportsCityService>();
 
         }
 

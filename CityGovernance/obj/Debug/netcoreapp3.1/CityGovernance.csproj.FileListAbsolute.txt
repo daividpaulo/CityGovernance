@@ -176,3 +176,8 @@ C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\staticwebassets\
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\staticwebassets\CityGovernance.StaticWebAssets.xml
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.dll
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.pdb
+C:\Testes\CityGovernance\CityGovernance\bin\Debug\netcoreapp3.1\NPOI.OOXML.dll
+C:\Testes\CityGovernance\CityGovernance\bin\Debug\netcoreapp3.1\NPOI.OpenXml4Net.dll
+C:\Testes\CityGovernance\CityGovernance\bin\Debug\netcoreapp3.1\NPOI.OpenXmlFormats.dll
+C:\Testes\CityGovernance\CityGovernance\bin\Debug\netcoreapp3.1\NPOI.dll
+C:\Testes\CityGovernance\CityGovernance\bin\Debug\netcoreapp3.1\ICSharpCode.SharpZipLib.dll

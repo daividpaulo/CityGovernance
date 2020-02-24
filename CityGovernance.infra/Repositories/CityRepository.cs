@@ -38,6 +38,11 @@ namespace CityGovernance.infra.Repositories
             citygovernanceContext.Citys.Remove(city);
         }
 
+        public List<City> GetAll()
+        {
+            return citygovernanceContext.Citys.Include(x=>x.Region).ToList();
+        }
+
         public IQueryable<City> GetAllCities(string search, string order, string sortBy)
         {
 
