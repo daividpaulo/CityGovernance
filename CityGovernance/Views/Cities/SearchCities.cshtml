@@ -164,7 +164,7 @@
                         <td>
                             <a asp-action="Details" asp-route-id="@item.Id">Detalhar</a>
                             <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id">Remover</a>
+                            <a asp-action="DeleteCity" asp-route-id="@item.Id">Remover</a>
                         </td>
 
                     </tr>
@@ -191,7 +191,7 @@
                     </a>
                 </li>
                 @for (var i = Model.PageIndex == 1 ? Model.PageIndex : Model.PageIndex - 1;
-                        i <= (Model.PageIndex + 5 > Model.TotalPages ? Model.TotalPages : Model.PageIndex + 5); i++)
+                       i <= (Model.PageIndex + 5 > Model.TotalPages ? Model.TotalPages : Model.PageIndex + 5); i++)
                 {
                     var activedItemClass = Model.PageIndex == @i ? "active" : "";
 
@@ -218,10 +218,5 @@
                 </li>
             </ul>
         </nav>
-
-
-
-
-
     </div>
 </div>

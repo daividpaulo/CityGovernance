@@ -44,7 +44,7 @@ namespace CityGovernance
 
 
                  }).AddControllersWithViews();
-            
+
 
 
             DependencyInjectionConfiguratino(services);
@@ -57,7 +57,7 @@ namespace CityGovernance
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<CityViewModel, City>();
-                cfg.CreateMap<City,CityViewModel> ();
+                cfg.CreateMap<City, CityViewModel>();
                 cfg.CreateMap<RegionViewModel, Region>();
                 cfg.CreateMap<Region, RegionViewModel>();
             });
@@ -68,7 +68,7 @@ namespace CityGovernance
 
         private static void DependencyInjectionConfiguratino(IServiceCollection services)
         {
-            services.AddTransient<IDataService, DataService>();
+            services.AddScoped<IDataService, DataService>();
             services.AddScoped<ICityService, CityService>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -80,6 +80,8 @@ namespace CityGovernance
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -102,12 +104,7 @@ namespace CityGovernance
                     pattern: "{controller=Cities}/{action=SearchCities}/{id?}");
             });
 
-
-          
-            
-
             serviceProvider.GetService<IDataService>().Seed();
-
         }
     }
 }

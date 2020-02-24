@@ -12,5 +12,6 @@ namespace CityGovernance.Domain.Interfaces
         City GetOne(int? id);
         City AddNew(City city);
         City UpdateCity(int id, City cityModel);
+        void DeleteCity(City city);
     }
 }

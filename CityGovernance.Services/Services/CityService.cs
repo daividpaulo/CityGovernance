@@ -76,5 +76,10 @@ namespace CityGovernance.Services.Services
                 return regionDb;
             }
         }
+
+        public void DeleteCity(City city)
+        {
+            _citiesRepository.DeleteCity(city);
+        }
     }
 }

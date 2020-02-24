@@ -22,7 +22,7 @@ namespace CityGovernance.infra.Repositories
         public City AddNew(City city)
         {
 
-            citygovernanceContext.Add(city);
+            citygovernanceContext.Citys.Add(city);
 
             return city;
         }
@@ -32,6 +32,11 @@ namespace CityGovernance.infra.Repositories
             citygovernanceContext.Set<Region>().Add(regionDb);
 
             return regionDb;
+        }
+
+        public void DeleteCity(City city)
+        {
+            citygovernanceContext.Citys.Remove(city);
         }
 
         public IQueryable<City> GetAllCities(string search, string order, string sortBy)
@@ -80,14 +85,25 @@ namespace CityGovernance.infra.Repositories
 
         public bool IsValid(City cityModel)
         {
-            return !citygovernanceContext.Citys.AsNoTracking().Any(x =>
-                                                                       (cityModel.Id > 0 && x.Id != cityModel.Id) &&
-                                                                    
-                                                                    (x.Ibge == cityModel.Ibge ||
+            bool isUpdate = cityModel.Id > 0;
 
-                                                                        (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
-                                                                          x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
-                                                                      );
+            if (isUpdate)
+            {
+                 return !citygovernanceContext.Citys.AsNoTracking().Any(x => x.Id != cityModel.Id && (x.Ibge == cityModel.Ibge ||
+
+                                                                         (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
+                                                                           x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
+                                                                       );
+            }
+            else
+            {
+                 return !citygovernanceContext.Citys.AsNoTracking().Any(x => (x.Ibge == cityModel.Ibge ||
+
+                                                                         (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
+                                                                           x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
+                                                                       );
+            }
+
         }
 
         public City Update(City cityDb)

@@ -49,13 +49,17 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Uf)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Region.Name)
+        </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Region.Name)
         </dd>
     </dl>
     
-    <form asp-action="DeleteCity">
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <form asp-action="DeleteCity" >
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
         <a asp-action="SearchCities">Voltar</a>
     </form>
 

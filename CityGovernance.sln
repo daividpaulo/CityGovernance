@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityGovernance.infra", "Cit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityGovernance.Services", "CityGovernance.Services\CityGovernance.Services.csproj", "{0C5BAFBA-803A-439B-9D21-2D6ED829F334}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CityGovernance.Tests", "CityGovernance.Tests\CityGovernance.Tests.csproj", "{1FA89533-77B6-48BE-B401-9714E72D6CD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CityGovernance.Tests", "CityGovernance.Tests\CityGovernance.Tests.csproj", "{1FA89533-77B6-48BE-B401-9714E72D6CD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

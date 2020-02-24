@@ -43,7 +43,7 @@ namespace CityGovernance.Controllers
             var query = _cityService.GetAllCities(search, order, orderBy);
 
             return View(await PaginatedList<City>.CreateAsync(query.AsNoTracking(), pageNumber ?? 1, pageSize ?? 5));
-            
+
         }
 
 
@@ -74,31 +74,39 @@ namespace CityGovernance.Controllers
                     ModelState.AddModelError("", "Inclusão não realizada! " +
                         "Tente novamente, caso problema persista " +
                         "entre em contato com o administrador do sistema.");
-                 }
+                }
 
             }
 
             return View(cityViewModel);
         }
-        
+
 
         public IActionResult Details(int? id)
         {
             if (id == null) return NotFound();
-            
+
             var city = _cityService.GetOne(id);
 
             if (city == null) return NotFound();
-          
+
             return View(_mapper.Map<CityViewModel>(city));
         }
 
-
-
-
-        public IActionResult Edit(int? id)
+        [HttpPost, ActionName("DeleteCity")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteCity(CityViewModel cityViewModel)
         {
+            if (cityViewModel == null || cityViewModel.Id == 0) return NotFound();
             
+            _cityService.DeleteCity(_cityService.GetOne(cityViewModel.Id));
+
+            return RedirectToAction(nameof(SearchCities));
+        }
+
+        
+        public IActionResult DeleteCity(int? id)
+        {
             if (id == null) return NotFound();
 
             var city = _cityService.GetOne(id);
@@ -106,7 +114,20 @@ namespace CityGovernance.Controllers
             if (city == null) return NotFound();
 
             return View(_mapper.Map<CityViewModel>(city));
-            
+        }
+
+
+        public IActionResult Edit(int? id)
+        {
+
+            if (id == null) return NotFound();
+
+            var city = _cityService.GetOne(id);
+
+            if (city == null) return NotFound();
+
+            return View(_mapper.Map<CityViewModel>(city));
+
         }
 
 
@@ -126,11 +147,11 @@ namespace CityGovernance.Controllers
                 return RedirectToAction(nameof(Details), routeValues: new { id = cityViewModel.Id });
 
             }
-            catch(ExistCityException ex)
+            catch (ExistCityException ex)
             {
                 ModelState.AddModelError("", ex.Message);
-            }          
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 ModelState.AddModelError("", "Inclusão não realizada! " +
                     "Tente novamente, caso problema persista " +

@@ -156,6 +156,10 @@ C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.A
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.TagHelpers.input.cache
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.TagHelpers.output.cache
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.RazorCoreGenerate.cache
+C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\DeleteCity.cshtml.g.cs
+C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\Details.cshtml.g.cs
+C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\Edit.cshtml.g.cs
+C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\NewCity.cshtml.g.cs
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\SearchCities.cshtml.g.cs
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
@@ -172,7 +176,3 @@ C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\staticwebassets\
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\staticwebassets\CityGovernance.StaticWebAssets.xml
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.dll
 C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\CityGovernance.pdb
-C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\NewCity.cshtml.g.cs
-C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\Details.cshtml.g.cs
-C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\Edit.cshtml.g.cs
-C:\Testes\CityGovernance\CityGovernance\obj\Debug\netcoreapp3.1\Razor\Views\Cities\DeleteCity.cshtml.g.cs

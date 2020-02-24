@@ -5,6 +5,8 @@ C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\CityGovern
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\CityGovernance.Tests.runtimeconfig.json
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\CityGovernance.Tests.runtimeconfig.dev.json
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\CityGovernance.Tests.dll
+C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\CityGovernance.Tests.pdb
+C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -14,6 +16,7 @@ C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Microsoft.
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Microsoft.TestPlatform.Utilities.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\testhost.dll
+C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Moq.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
@@ -93,8 +96,5 @@ C:\Testes\CityGovernance\CityGovernance.Tests\obj\Debug\netcoreapp3.1\CityGovern
 C:\Testes\CityGovernance\CityGovernance.Tests\obj\Debug\netcoreapp3.1\CityGovernance.Tests.AssemblyInfoInputs.cache
 C:\Testes\CityGovernance\CityGovernance.Tests\obj\Debug\netcoreapp3.1\CityGovernance.Tests.AssemblyInfo.cs
 C:\Testes\CityGovernance\CityGovernance.Tests\obj\Debug\netcoreapp3.1\CityGovernance.Tests.csproj.CopyComplete
-C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\CityGovernance.Tests.pdb
-C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Castle.Core.dll
-C:\Testes\CityGovernance\CityGovernance.Tests\bin\Debug\netcoreapp3.1\Moq.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\obj\Debug\netcoreapp3.1\CityGovernance.Tests.dll
 C:\Testes\CityGovernance\CityGovernance.Tests\obj\Debug\netcoreapp3.1\CityGovernance.Tests.pdb

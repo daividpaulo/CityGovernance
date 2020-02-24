@@ -13,6 +13,6 @@ namespace CityGovernance.ViewModels
 
         [Display(Name = "Nome da Região")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Nome da Região obrigatorio!")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
     }
 }

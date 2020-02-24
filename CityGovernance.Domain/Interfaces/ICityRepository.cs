@@ -17,5 +17,6 @@ namespace CityGovernance.Domain.Interfaces
         Region GetRegionByName(string name);
         Region AddNewRegion(Region regionDb);
         City Update(City cityDb);
+        void DeleteCity(City city);
     }
 }
