@@ -12,23 +12,19 @@ namespace CityGovernance.Infra.Db
 
         public CityGovernanceContext(DbContextOptions options) : base(options)
         {
-           
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CityMapping());
             modelBuilder.ApplyConfiguration(new RegionMapping());
-            
-            
-
+        
             base.OnModelCreating(modelBuilder);
                         
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
             base.OnConfiguring(optionsBuilder);
         }
 

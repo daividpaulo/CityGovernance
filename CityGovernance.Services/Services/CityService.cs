@@ -17,13 +17,11 @@ namespace CityGovernance.Services.Services
             _citiesRepository = citiesRepository;
         }
 
+      
+        public IQueryable<City> GetAllCities(string search, string order, string sort) =>
+                                             _citiesRepository.GetAllCities(search,order,sort);
         
-        
-
-        public IQueryable<City> GetAllCities(string search, string order, string sort)
-        {
-            return _citiesRepository.GetAllCities(search,order,sort);
-        }
+        public City GetOne(int? id) => _citiesRepository.GetOne(id);
 
         public City AddNew(City cityModel)
         {
@@ -38,8 +36,6 @@ namespace CityGovernance.Services.Services
 
         }
 
-
-        public City GetOne(int? id) => _citiesRepository.GetOne(id);
 
         public City UpdateCity(int id, City cityModel)
         {
@@ -63,18 +59,13 @@ namespace CityGovernance.Services.Services
         {
             Region regionDb = _citiesRepository.GetRegionByName(name); 
 
-            if (regionDb != null)
-            {
-                return regionDb;
-            }
-            else
+            if (regionDb == null)
             {
                 regionDb = new Region(name);
-
                 _citiesRepository.AddNewRegion(regionDb);
-
-                return regionDb;
             }
+
+            return regionDb;
         }
 
         public void DeleteCity(City city)

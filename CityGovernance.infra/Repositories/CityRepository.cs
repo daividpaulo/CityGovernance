@@ -21,7 +21,6 @@ namespace CityGovernance.infra.Repositories
 
         public City AddNew(City city)
         {
-
             citygovernanceContext.Citys.Add(city);
 
             return city;
@@ -89,19 +88,19 @@ namespace CityGovernance.infra.Repositories
 
             if (isUpdate)
             {
-                 return !citygovernanceContext.Citys.AsNoTracking().Any(x => x.Id != cityModel.Id && (x.Ibge == cityModel.Ibge ||
+                return !citygovernanceContext.Citys.AsNoTracking().Any(x => x.Id != cityModel.Id && (x.Ibge == cityModel.Ibge ||
 
-                                                                         (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
-                                                                           x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
-                                                                       );
+                                                                        (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
+                                                                          x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
+                                                                      );
             }
             else
             {
-                 return !citygovernanceContext.Citys.AsNoTracking().Any(x => (x.Ibge == cityModel.Ibge ||
+                return !citygovernanceContext.Citys.AsNoTracking().Any(x => (x.Ibge == cityModel.Ibge ||
 
-                                                                         (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
-                                                                           x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
-                                                                       );
+                                                                        (x.Name.Trim().ToLower().Equals(cityModel.Name.Trim().ToLower()) &&
+                                                                          x.Uf.Trim().ToLower().Equals(cityModel.Uf.Trim().ToLower())))
+                                                                      );
             }
 
         }
@@ -109,7 +108,7 @@ namespace CityGovernance.infra.Repositories
         public City Update(City cityDb)
         {
             citygovernanceContext.Citys.Update(cityDb);
-            
+
             return cityDb;
         }
 

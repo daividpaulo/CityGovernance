@@ -38,9 +38,6 @@ namespace CityGovernance.infra.Configurations
                                 .Select(city => InsertNewCity(city)
                                ).ToList();
 
-
-           
-
         }
 
         private City InsertNewCity(string[] city)
@@ -63,9 +60,7 @@ namespace CityGovernance.infra.Configurations
                 _dbSetCity.Add(newCity);
                 _cityGovernanceContext.SaveChanges();
             }
-              
-            
-
+     
             return newCity;
 
         }

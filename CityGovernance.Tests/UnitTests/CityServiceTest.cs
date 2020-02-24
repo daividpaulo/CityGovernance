@@ -33,7 +33,7 @@ namespace CityGovernance.Tests.UnitTests
             Assert.Equal("Já existe uma cidade cadastrada para uma das opções informadas [ Nome ou Ibge ou Uf ]", exception.Message);
         }
 
-        
+
 
     }
 }

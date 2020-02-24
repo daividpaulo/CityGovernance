@@ -10,7 +10,6 @@ namespace CityGovernance.ViewModels
     {
         public int Id { get; set; }
 
-
         [Display(Name = "Código IBGE")]
         [Required(AllowEmptyStrings = false,ErrorMessage = "Ibge obrigatorio!")]
         public int? Ibge { get; set; }
@@ -25,8 +24,6 @@ namespace CityGovernance.ViewModels
         
         [Required(AllowEmptyStrings = false, ErrorMessage = "Latitude obrigatorio!")]
         public double? Latitude { get; set; }
-
-
 
         [Display(Name = "Unidade Federativa - UF")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Uf obrigatorio!")]
